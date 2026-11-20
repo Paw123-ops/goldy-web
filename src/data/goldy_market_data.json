@@ -27,49 +27,49 @@
       "horizon_label": "Horizon Harian (H+1)",
       "target_days": 1,
       "target_date_label": "Besok Hari Bursa",
-      "predicted_price": 60.62,
-      "predicted_idr": 35043,
-      "delta": -0.05,
-      "delta_pct": -0.08,
-      "lower_bound_95": 50.36,
-      "upper_bound_95": 70.87,
-      "mape": 2.01,
-      "r2": 0.9828,
-      "signal": "Netral - Stabil",
-      "confidence_level": "Sangat Tinggi (97.99%)",
-      "recommendation": "Scalping / Day Trading: Fluktuasi mikro terkendali."
+      "predicted_price": 60.64,
+      "predicted_idr": 35055,
+      "delta": -0.03,
+      "delta_pct": -0.05,
+      "lower_bound_95": 52.1,
+      "upper_bound_95": 69.25,
+      "mape": 1.98,
+      "r2": 0.9869,
+      "signal": "Stabil Menguat",
+      "confidence_level": "Sangat Tinggi (98.02%)",
+      "recommendation": "Scalping / Day Trading: Model RF unggul atas seluruh baseline."
     },
     "7d": {
       "horizon_label": "Horizon Mingguan (H+7)",
       "target_days": 7,
       "target_date_label": "7 Hari Kalender Bursa",
-      "predicted_price": 61.15,
-      "predicted_idr": 35350,
-      "delta": 0.48,
-      "delta_pct": 0.79,
-      "lower_bound_95": 51.85,
-      "upper_bound_95": 69.33,
-      "mape": 5.55,
-      "r2": 0.9257,
-      "signal": "Bullish Swing",
-      "confidence_level": "Tinggi (94.45%)",
-      "recommendation": "Swing Trading: Potensi kenaikan jangka pendek didukung rasio emas."
+      "predicted_price": 61.34,
+      "predicted_idr": 35459,
+      "delta": 0.67,
+      "delta_pct": 1.11,
+      "lower_bound_95": 48.4,
+      "upper_bound_95": 73.9,
+      "mape": 5.44,
+      "r2": 0.9328,
+      "signal": "Bullish Momentum",
+      "confidence_level": "Tinggi (94.56%)",
+      "recommendation": "Swing Trading: Sinyal leading momentum memicu potensi apresiasi harga."
     },
     "30d": {
       "horizon_label": "Horizon Bulanan (H+30)",
       "target_days": 30,
       "target_date_label": "30 Hari Kalender Bursa",
-      "predicted_price": 60.41,
-      "predicted_idr": 34922,
-      "delta": -0.26,
-      "delta_pct": -0.43,
-      "lower_bound_95": 51.63,
-      "upper_bound_95": 69.13,
-      "mape": 10.29,
-      "r2": 0.749,
-      "signal": "Konsolidasi Strategis",
-      "confidence_level": "Baik (89.71%)",
-      "recommendation": "Position Trading: Akumulasi bertahap di area batas bawah aman."
+      "predicted_price": 61.58,
+      "predicted_idr": 35598,
+      "delta": 0.91,
+      "delta_pct": 1.5,
+      "lower_bound_95": 42.5,
+      "upper_bound_95": 80.75,
+      "mape": 11.14,
+      "r2": 0.7308,
+      "signal": "Akumulasi Strategis",
+      "confidence_level": "Baik (88.86%)",
+      "recommendation": "Position Trading: Akumulasi di area support; batas atas memayungi target resistance."
     }
   },
   "forward_projection": [
@@ -77,241 +77,241 @@
       "day": 1,
       "date": "2026-09-30",
       "display_date": "30 Sep 2026",
-      "predicted_price": 60.91,
-      "lower_bound_95": 55.76,
-      "upper_bound_95": 66.06
+      "predicted_price": 60.82,
+      "lower_bound_95": 58.19,
+      "upper_bound_95": 63.45
     },
     {
       "day": 2,
       "date": "2026-10-01",
       "display_date": "01 Oct 2026",
-      "predicted_price": 61.13,
-      "lower_bound_95": 55.59,
-      "upper_bound_95": 66.67
+      "predicted_price": 60.96,
+      "lower_bound_95": 57.24,
+      "upper_bound_95": 64.68
     },
     {
       "day": 3,
       "date": "2026-10-02",
       "display_date": "02 Oct 2026",
-      "predicted_price": 61.31,
-      "lower_bound_95": 55.46,
-      "upper_bound_95": 67.16
+      "predicted_price": 61.09,
+      "lower_bound_95": 56.54,
+      "upper_bound_95": 65.64
     },
     {
       "day": 4,
       "date": "2026-10-05",
       "display_date": "05 Oct 2026",
-      "predicted_price": 61.43,
-      "lower_bound_95": 55.33,
-      "upper_bound_95": 67.53
+      "predicted_price": 61.2,
+      "lower_bound_95": 55.94,
+      "upper_bound_95": 66.46
     },
     {
       "day": 5,
       "date": "2026-10-06",
       "display_date": "06 Oct 2026",
-      "predicted_price": 61.47,
-      "lower_bound_95": 55.15,
-      "upper_bound_95": 67.79
+      "predicted_price": 61.28,
+      "lower_bound_95": 55.4,
+      "upper_bound_95": 67.16
     },
     {
       "day": 6,
       "date": "2026-10-07",
       "display_date": "07 Oct 2026",
-      "predicted_price": 61.45,
-      "lower_bound_95": 54.92,
-      "upper_bound_95": 67.98
+      "predicted_price": 61.33,
+      "lower_bound_95": 54.89,
+      "upper_bound_95": 67.77
     },
     {
       "day": 7,
       "date": "2026-10-08",
       "display_date": "08 Oct 2026",
-      "predicted_price": 61.34,
-      "lower_bound_95": 54.63,
-      "upper_bound_95": 68.05
+      "predicted_price": 61.36,
+      "lower_bound_95": 54.41,
+      "upper_bound_95": 68.31
     },
     {
       "day": 8,
       "date": "2026-10-09",
       "display_date": "09 Oct 2026",
-      "predicted_price": 61.18,
-      "lower_bound_95": 54.29,
-      "upper_bound_95": 68.07
+      "predicted_price": 61.35,
+      "lower_bound_95": 53.92,
+      "upper_bound_95": 68.78
     },
     {
       "day": 9,
       "date": "2026-10-12",
       "display_date": "12 Oct 2026",
-      "predicted_price": 60.96,
-      "lower_bound_95": 53.91,
-      "upper_bound_95": 68.01
+      "predicted_price": 61.32,
+      "lower_bound_95": 53.44,
+      "upper_bound_95": 69.2
     },
     {
       "day": 10,
       "date": "2026-10-13",
       "display_date": "13 Oct 2026",
-      "predicted_price": 60.7,
-      "lower_bound_95": 53.5,
-      "upper_bound_95": 67.9
+      "predicted_price": 61.26,
+      "lower_bound_95": 52.95,
+      "upper_bound_95": 69.57
     },
     {
       "day": 11,
       "date": "2026-10-14",
       "display_date": "14 Oct 2026",
-      "predicted_price": 60.44,
-      "lower_bound_95": 53.09,
-      "upper_bound_95": 67.79
+      "predicted_price": 61.19,
+      "lower_bound_95": 52.47,
+      "upper_bound_95": 69.91
     },
     {
       "day": 12,
       "date": "2026-10-15",
       "display_date": "15 Oct 2026",
-      "predicted_price": 60.19,
-      "lower_bound_95": 52.7,
-      "upper_bound_95": 67.68
+      "predicted_price": 61.1,
+      "lower_bound_95": 52.0,
+      "upper_bound_95": 70.2
     },
     {
       "day": 13,
       "date": "2026-10-16",
       "display_date": "16 Oct 2026",
-      "predicted_price": 59.98,
-      "lower_bound_95": 52.35,
-      "upper_bound_95": 67.61
+      "predicted_price": 61.01,
+      "lower_bound_95": 51.53,
+      "upper_bound_95": 70.49
     },
     {
       "day": 14,
       "date": "2026-10-19",
       "display_date": "19 Oct 2026",
-      "predicted_price": 59.81,
-      "lower_bound_95": 52.06,
-      "upper_bound_95": 67.56
+      "predicted_price": 60.92,
+      "lower_bound_95": 51.09,
+      "upper_bound_95": 70.75
     },
     {
       "day": 15,
       "date": "2026-10-20",
       "display_date": "20 Oct 2026",
-      "predicted_price": 59.71,
-      "lower_bound_95": 51.83,
-      "upper_bound_95": 67.59
+      "predicted_price": 60.85,
+      "lower_bound_95": 50.67,
+      "upper_bound_95": 71.03
     },
     {
       "day": 16,
       "date": "2026-10-21",
       "display_date": "21 Oct 2026",
-      "predicted_price": 59.69,
-      "lower_bound_95": 51.69,
-      "upper_bound_95": 67.69
+      "predicted_price": 60.79,
+      "lower_bound_95": 50.28,
+      "upper_bound_95": 71.3
     },
     {
       "day": 17,
       "date": "2026-10-22",
       "display_date": "22 Oct 2026",
-      "predicted_price": 59.74,
-      "lower_bound_95": 51.62,
-      "upper_bound_95": 67.86
+      "predicted_price": 60.75,
+      "lower_bound_95": 49.91,
+      "upper_bound_95": 71.59
     },
     {
       "day": 18,
       "date": "2026-10-23",
       "display_date": "23 Oct 2026",
-      "predicted_price": 59.86,
-      "lower_bound_95": 51.63,
-      "upper_bound_95": 68.09
+      "predicted_price": 60.74,
+      "lower_bound_95": 49.59,
+      "upper_bound_95": 71.89
     },
     {
       "day": 19,
       "date": "2026-10-26",
       "display_date": "26 Oct 2026",
-      "predicted_price": 60.04,
-      "lower_bound_95": 51.7,
-      "upper_bound_95": 68.38
+      "predicted_price": 60.76,
+      "lower_bound_95": 49.3,
+      "upper_bound_95": 72.22
     },
     {
       "day": 20,
       "date": "2026-10-27",
       "display_date": "27 Oct 2026",
-      "predicted_price": 60.26,
-      "lower_bound_95": 51.81,
-      "upper_bound_95": 68.71
+      "predicted_price": 60.81,
+      "lower_bound_95": 49.06,
+      "upper_bound_95": 72.56
     },
     {
       "day": 21,
       "date": "2026-10-28",
       "display_date": "28 Oct 2026",
-      "predicted_price": 60.51,
-      "lower_bound_95": 51.96,
-      "upper_bound_95": 69.06
+      "predicted_price": 60.89,
+      "lower_bound_95": 48.85,
+      "upper_bound_95": 72.93
     },
     {
       "day": 22,
       "date": "2026-10-29",
       "display_date": "29 Oct 2026",
-      "predicted_price": 60.75,
-      "lower_bound_95": 52.09,
-      "upper_bound_95": 69.41
+      "predicted_price": 60.99,
+      "lower_bound_95": 48.66,
+      "upper_bound_95": 73.32
     },
     {
       "day": 23,
       "date": "2026-10-30",
       "display_date": "30 Oct 2026",
-      "predicted_price": 60.97,
-      "lower_bound_95": 52.21,
-      "upper_bound_95": 69.73
+      "predicted_price": 61.12,
+      "lower_bound_95": 48.51,
+      "upper_bound_95": 73.73
     },
     {
       "day": 24,
       "date": "2026-11-02",
       "display_date": "02 Nov 2026",
-      "predicted_price": 61.14,
-      "lower_bound_95": 52.29,
-      "upper_bound_95": 69.99
+      "predicted_price": 61.26,
+      "lower_bound_95": 48.38,
+      "upper_bound_95": 74.14
     },
     {
       "day": 25,
       "date": "2026-11-03",
       "display_date": "03 Nov 2026",
-      "predicted_price": 61.26,
-      "lower_bound_95": 52.31,
-      "upper_bound_95": 70.21
+      "predicted_price": 61.41,
+      "lower_bound_95": 48.27,
+      "upper_bound_95": 74.55
     },
     {
       "day": 26,
       "date": "2026-11-04",
       "display_date": "04 Nov 2026",
-      "predicted_price": 61.3,
-      "lower_bound_95": 52.26,
-      "upper_bound_95": 70.34
+      "predicted_price": 61.56,
+      "lower_bound_95": 48.16,
+      "upper_bound_95": 74.96
     },
     {
       "day": 27,
       "date": "2026-11-05",
       "display_date": "05 Nov 2026",
-      "predicted_price": 61.27,
-      "lower_bound_95": 52.13,
-      "upper_bound_95": 70.41
+      "predicted_price": 61.71,
+      "lower_bound_95": 48.05,
+      "upper_bound_95": 75.37
     },
     {
       "day": 28,
       "date": "2026-11-06",
       "display_date": "06 Nov 2026",
-      "predicted_price": 61.16,
-      "lower_bound_95": 51.93,
-      "upper_bound_95": 70.39
+      "predicted_price": 61.84,
+      "lower_bound_95": 47.93,
+      "upper_bound_95": 75.75
     },
     {
       "day": 29,
       "date": "2026-11-09",
       "display_date": "09 Nov 2026",
-      "predicted_price": 60.99,
-      "lower_bound_95": 51.67,
-      "upper_bound_95": 70.31
+      "predicted_price": 61.95,
+      "lower_bound_95": 47.8,
+      "upper_bound_95": 76.1
     },
     {
       "day": 30,
       "date": "2026-11-10",
       "display_date": "10 Nov 2026",
-      "predicted_price": 60.77,
-      "lower_bound_95": 51.37,
-      "upper_bound_95": 70.17
+      "predicted_price": 62.03,
+      "lower_bound_95": 47.63,
+      "upper_bound_95": 76.43
     }
   ],
   "historical_chart": [
@@ -319,7 +319,7 @@
       "date": "2026-07-08",
       "display_date": "08 Jul",
       "actual": 58.16,
-      "rf_pred": 57.37,
+      "rf_pred": 57.7,
       "linear_pred": 58.51,
       "gold": 4082.4,
       "dxy": 101.05
@@ -328,7 +328,7 @@
       "date": "2026-07-09",
       "display_date": "09 Jul",
       "actual": 60.38,
-      "rf_pred": 61.07,
+      "rf_pred": 60.31,
       "linear_pred": 60.72,
       "gold": 4140.8,
       "dxy": 100.94
@@ -337,7 +337,7 @@
       "date": "2026-07-10",
       "display_date": "10 Jul",
       "actual": 59.81,
-      "rf_pred": 59.64,
+      "rf_pred": 59.6,
       "linear_pred": 60.15,
       "gold": 4113.7,
       "dxy": 100.97
@@ -346,7 +346,7 @@
       "date": "2026-07-13",
       "display_date": "13 Jul",
       "actual": 57.63,
-      "rf_pred": 57.0,
+      "rf_pred": 56.63,
       "linear_pred": 57.97,
       "gold": 4005.7,
       "dxy": 101.28
@@ -355,7 +355,7 @@
       "date": "2026-07-14",
       "display_date": "14 Jul",
       "actual": 58.77,
-      "rf_pred": 59.12,
+      "rf_pred": 58.25,
       "linear_pred": 59.11,
       "gold": 4069.7,
       "dxy": 100.94
@@ -364,7 +364,7 @@
       "date": "2026-07-15",
       "display_date": "15 Jul",
       "actual": 57.11,
-      "rf_pred": 56.63,
+      "rf_pred": 56.85,
       "linear_pred": 57.47,
       "gold": 4051.8,
       "dxy": 100.5
@@ -373,7 +373,7 @@
       "date": "2026-07-16",
       "display_date": "16 Jul",
       "actual": 55.9,
-      "rf_pred": 55.54,
+      "rf_pred": 54.86,
       "linear_pred": 56.26,
       "gold": 3992.1,
       "dxy": 100.73
@@ -382,7 +382,7 @@
       "date": "2026-07-17",
       "display_date": "17 Jul",
       "actual": 56.04,
-      "rf_pred": 56.08,
+      "rf_pred": 55.16,
       "linear_pred": 56.41,
       "gold": 4018.8,
       "dxy": 100.75
@@ -391,7 +391,7 @@
       "date": "2026-07-20",
       "display_date": "20 Jul",
       "actual": 56.8,
-      "rf_pred": 57.03,
+      "rf_pred": 56.6,
       "linear_pred": 57.15,
       "gold": 4015.9,
       "dxy": 100.99
@@ -400,7 +400,7 @@
       "date": "2026-07-21",
       "display_date": "21 Jul",
       "actual": 58.83,
-      "rf_pred": 59.46,
+      "rf_pred": 58.85,
       "linear_pred": 59.17,
       "gold": 4076.4,
       "dxy": 101.18
@@ -409,7 +409,7 @@
       "date": "2026-07-22",
       "display_date": "22 Jul",
       "actual": 60.02,
-      "rf_pred": 60.38,
+      "rf_pred": 60.78,
       "linear_pred": 60.37,
       "gold": 4151.9,
       "dxy": 101.14
@@ -418,7 +418,7 @@
       "date": "2026-07-23",
       "display_date": "23 Jul",
       "actual": 57.8,
-      "rf_pred": 57.16,
+      "rf_pred": 58.29,
       "linear_pred": 58.15,
       "gold": 4050.2,
       "dxy": 101.43
@@ -427,7 +427,7 @@
       "date": "2026-07-24",
       "display_date": "24 Jul",
       "actual": 58.66,
-      "rf_pred": 58.92,
+      "rf_pred": 59.35,
       "linear_pred": 59.0,
       "gold": 4070.8,
       "dxy": 101.47
@@ -436,7 +436,7 @@
       "date": "2026-07-27",
       "display_date": "27 Jul",
       "actual": 58.47,
-      "rf_pred": 58.41,
+      "rf_pred": 58.9,
       "linear_pred": 58.82,
       "gold": 4077.0,
       "dxy": 101.51
@@ -445,7 +445,7 @@
       "date": "2026-07-28",
       "display_date": "28 Jul",
       "actual": 57.3,
-      "rf_pred": 56.95,
+      "rf_pred": 56.93,
       "linear_pred": 57.65,
       "gold": 4038.7,
       "dxy": 101.38
@@ -454,7 +454,7 @@
       "date": "2026-07-29",
       "display_date": "29 Jul",
       "actual": 57.86,
-      "rf_pred": 58.03,
+      "rf_pred": 57.34,
       "linear_pred": 58.2,
       "gold": 4036.3,
       "dxy": 100.8
@@ -463,7 +463,7 @@
       "date": "2026-07-30",
       "display_date": "30 Jul",
       "actual": 58.81,
-      "rf_pred": 59.1,
+      "rf_pred": 59.07,
       "linear_pred": 59.16,
       "gold": 4100.1,
       "dxy": 100.01
@@ -472,7 +472,7 @@
       "date": "2026-07-31",
       "display_date": "31 Jul",
       "actual": 57.59,
-      "rf_pred": 57.23,
+      "rf_pred": 57.33,
       "linear_pred": 57.96,
       "gold": 4107.0,
       "dxy": 99.8
@@ -481,7 +481,7 @@
       "date": "2026-08-03",
       "display_date": "03 Aug",
       "actual": 57.67,
-      "rf_pred": 57.69,
+      "rf_pred": 57.47,
       "linear_pred": 58.03,
       "gold": 4090.5,
       "dxy": 99.96
@@ -490,7 +490,7 @@
       "date": "2026-08-04",
       "display_date": "04 Aug",
       "actual": 60.06,
-      "rf_pred": 60.81,
+      "rf_pred": 60.78,
       "linear_pred": 60.4,
       "gold": 4152.6,
       "dxy": 99.89
@@ -499,7 +499,7 @@
       "date": "2026-08-05",
       "display_date": "05 Aug",
       "actual": 62.1,
-      "rf_pred": 62.73,
+      "rf_pred": 63.24,
       "linear_pred": 62.46,
       "gold": 4305.2,
       "dxy": 99.69
@@ -508,7 +508,7 @@
       "date": "2026-08-06",
       "display_date": "06 Aug",
       "actual": 61.44,
-      "rf_pred": 61.24,
+      "rf_pred": 62.13,
       "linear_pred": 61.81,
       "gold": 4299.6,
       "dxy": 99.97
@@ -517,7 +517,7 @@
       "date": "2026-08-07",
       "display_date": "07 Aug",
       "actual": 63.33,
-      "rf_pred": 63.92,
+      "rf_pred": 64.91,
       "linear_pred": 63.7,
       "gold": 4399.7,
       "dxy": 99.6
@@ -526,7 +526,7 @@
       "date": "2026-08-10",
       "display_date": "10 Aug",
       "actual": 65.11,
-      "rf_pred": 65.66,
+      "rf_pred": 67.21,
       "linear_pred": 65.46,
       "gold": 4419.7,
       "dxy": 99.81
@@ -535,7 +535,7 @@
       "date": "2026-08-11",
       "display_date": "11 Aug",
       "actual": 64.77,
-      "rf_pred": 64.67,
+      "rf_pred": 66.04,
       "linear_pred": 65.13,
       "gold": 4441.1,
       "dxy": 99.82
@@ -544,7 +544,7 @@
       "date": "2026-08-12",
       "display_date": "12 Aug",
       "actual": 65.56,
-      "rf_pred": 65.8,
+      "rf_pred": 66.47,
       "linear_pred": 65.92,
       "gold": 4467.5,
       "dxy": 100.01
@@ -553,7 +553,7 @@
       "date": "2026-08-13",
       "display_date": "13 Aug",
       "actual": 64.87,
-      "rf_pred": 64.67,
+      "rf_pred": 65.78,
       "linear_pred": 65.22,
       "gold": 4420.4,
       "dxy": 99.96
@@ -562,7 +562,7 @@
       "date": "2026-08-14",
       "display_date": "14 Aug",
       "actual": 64.99,
-      "rf_pred": 65.02,
+      "rf_pred": 65.41,
       "linear_pred": 65.35,
       "gold": 4437.3,
       "dxy": 99.67
@@ -571,7 +571,7 @@
       "date": "2026-08-17",
       "display_date": "17 Aug",
       "actual": 66.12,
-      "rf_pred": 66.47,
+      "rf_pred": 66.38,
       "linear_pred": 66.47,
       "gold": 4473.7,
       "dxy": 99.64
@@ -580,7 +580,7 @@
       "date": "2026-08-18",
       "display_date": "18 Aug",
       "actual": 63.94,
-      "rf_pred": 63.31,
+      "rf_pred": 63.74,
       "linear_pred": 64.31,
       "gold": 4420.6,
       "dxy": 99.65
@@ -589,7 +589,7 @@
       "date": "2026-08-19",
       "display_date": "19 Aug",
       "actual": 65.73,
-      "rf_pred": 66.28,
+      "rf_pred": 65.77,
       "linear_pred": 66.11,
       "gold": 4545.3,
       "dxy": 98.83
@@ -598,7 +598,7 @@
       "date": "2026-08-20",
       "display_date": "20 Aug",
       "actual": 68.03,
-      "rf_pred": 68.74,
+      "rf_pred": 68.86,
       "linear_pred": 68.38,
       "gold": 4571.4,
       "dxy": 98.9
@@ -607,7 +607,7 @@
       "date": "2026-08-21",
       "display_date": "21 Aug",
       "actual": 69.47,
-      "rf_pred": 69.91,
+      "rf_pred": 70.67,
       "linear_pred": 69.83,
       "gold": 4680.6,
       "dxy": 98.8
@@ -616,7 +616,7 @@
       "date": "2026-08-24",
       "display_date": "24 Aug",
       "actual": 68.54,
-      "rf_pred": 68.27,
+      "rf_pred": 69.17,
       "linear_pred": 68.92,
       "gold": 4697.8,
       "dxy": 99.0
@@ -625,7 +625,7 @@
       "date": "2026-08-25",
       "display_date": "25 Aug",
       "actual": 68.64,
-      "rf_pred": 68.67,
+      "rf_pred": 69.9,
       "linear_pred": 69.02,
       "gold": 4694.5,
       "dxy": 98.92
@@ -634,7 +634,7 @@
       "date": "2026-08-26",
       "display_date": "26 Aug",
       "actual": 67.99,
-      "rf_pred": 67.8,
+      "rf_pred": 68.57,
       "linear_pred": 68.37,
       "gold": 4653.3,
       "dxy": 99.17
@@ -643,7 +643,7 @@
       "date": "2026-08-27",
       "display_date": "27 Aug",
       "actual": 69.43,
-      "rf_pred": 69.87,
+      "rf_pred": 69.79,
       "linear_pred": 69.79,
       "gold": 4664.0,
       "dxy": 99.16
@@ -652,7 +652,7 @@
       "date": "2026-08-28",
       "display_date": "28 Aug",
       "actual": 67.0,
-      "rf_pred": 66.3,
+      "rf_pred": 66.4,
       "linear_pred": 67.35,
       "gold": 4529.9,
       "dxy": 99.7
@@ -661,7 +661,7 @@
       "date": "2026-08-31",
       "display_date": "31 Aug",
       "actual": 66.22,
-      "rf_pred": 65.99,
+      "rf_pred": 65.66,
       "linear_pred": 66.57,
       "gold": 4481.5,
       "dxy": 99.43
@@ -670,7 +670,7 @@
       "date": "2026-09-01",
       "display_date": "01 Sep",
       "actual": 64.62,
-      "rf_pred": 64.15,
+      "rf_pred": 63.67,
       "linear_pred": 64.97,
       "gold": 4396.4,
       "dxy": 99.67
@@ -679,7 +679,7 @@
       "date": "2026-09-02",
       "display_date": "02 Sep",
       "actual": 64.72,
-      "rf_pred": 64.75,
+      "rf_pred": 63.94,
       "linear_pred": 65.07,
       "gold": 4414.6,
       "dxy": 99.56
@@ -688,7 +688,7 @@
       "date": "2026-09-03",
       "display_date": "03 Sep",
       "actual": 66.97,
-      "rf_pred": 67.67,
+      "rf_pred": 66.38,
       "linear_pred": 67.33,
       "gold": 4539.9,
       "dxy": 99.0
@@ -697,7 +697,7 @@
       "date": "2026-09-04",
       "display_date": "04 Sep",
       "actual": 66.05,
-      "rf_pred": 65.78,
+      "rf_pred": 65.82,
       "linear_pred": 66.4,
       "gold": 4476.6,
       "dxy": 99.16
@@ -706,7 +706,7 @@
       "date": "2026-09-07",
       "display_date": "07 Sep",
       "actual": 66.05,
-      "rf_pred": 66.05,
+      "rf_pred": 66.01,
       "linear_pred": 66.4,
       "gold": 4476.6,
       "dxy": 99.16
@@ -715,7 +715,7 @@
       "date": "2026-09-08",
       "display_date": "08 Sep",
       "actual": 66.3,
-      "rf_pred": 66.38,
+      "rf_pred": 66.73,
       "linear_pred": 66.64,
       "gold": 4439.0,
       "dxy": 98.84
@@ -724,7 +724,7 @@
       "date": "2026-09-09",
       "display_date": "09 Sep",
       "actual": 67.94,
-      "rf_pred": 68.45,
+      "rf_pred": 68.78,
       "linear_pred": 68.26,
       "gold": 4460.7,
       "dxy": 98.77
@@ -733,7 +733,7 @@
       "date": "2026-09-10",
       "display_date": "10 Sep",
       "actual": 64.28,
-      "rf_pred": 63.24,
+      "rf_pred": 63.63,
       "linear_pred": 64.64,
       "gold": 4407.3,
       "dxy": 99.09
@@ -742,7 +742,7 @@
       "date": "2026-09-11",
       "display_date": "11 Sep",
       "actual": 64.55,
-      "rf_pred": 64.63,
+      "rf_pred": 64.19,
       "linear_pred": 64.9,
       "gold": 4408.9,
       "dxy": 99.12
@@ -751,7 +751,7 @@
       "date": "2026-09-14",
       "display_date": "14 Sep",
       "actual": 63.51,
-      "rf_pred": 63.2,
+      "rf_pred": 62.9,
       "linear_pred": 63.86,
       "gold": 4351.9,
       "dxy": 99.46
@@ -760,7 +760,7 @@
       "date": "2026-09-15",
       "display_date": "15 Sep",
       "actual": 63.24,
-      "rf_pred": 63.16,
+      "rf_pred": 62.51,
       "linear_pred": 63.59,
       "gold": 4332.8,
       "dxy": 99.65
@@ -769,7 +769,7 @@
       "date": "2026-09-16",
       "display_date": "16 Sep",
       "actual": 64.29,
-      "rf_pred": 64.61,
+      "rf_pred": 63.43,
       "linear_pred": 64.64,
       "gold": 4387.5,
       "dxy": 100.31
@@ -778,7 +778,7 @@
       "date": "2026-09-17",
       "display_date": "17 Sep",
       "actual": 65.47,
-      "rf_pred": 65.83,
+      "rf_pred": 65.77,
       "linear_pred": 65.81,
       "gold": 4399.7,
       "dxy": 100.22
@@ -787,7 +787,7 @@
       "date": "2026-09-18",
       "display_date": "18 Sep",
       "actual": 66.56,
-      "rf_pred": 66.89,
+      "rf_pred": 67.08,
       "linear_pred": 66.89,
       "gold": 4424.9,
       "dxy": 100.22
@@ -796,7 +796,7 @@
       "date": "2026-09-21",
       "display_date": "21 Sep",
       "actual": 65.82,
-      "rf_pred": 65.6,
+      "rf_pred": 66.42,
       "linear_pred": 66.15,
       "gold": 4383.9,
       "dxy": 100.43
@@ -805,7 +805,7 @@
       "date": "2026-09-22",
       "display_date": "22 Sep",
       "actual": 65.93,
-      "rf_pred": 65.96,
+      "rf_pred": 66.63,
       "linear_pred": 66.25,
       "gold": 4376.4,
       "dxy": 100.6
@@ -814,7 +814,7 @@
       "date": "2026-09-23",
       "display_date": "23 Sep",
       "actual": 64.38,
-      "rf_pred": 63.93,
+      "rf_pred": 64.4,
       "linear_pred": 64.71,
       "gold": 4318.4,
       "dxy": 101.1
@@ -823,7 +823,7 @@
       "date": "2026-09-24",
       "display_date": "24 Sep",
       "actual": 63.46,
-      "rf_pred": 63.19,
+      "rf_pred": 62.97,
       "linear_pred": 63.8,
       "gold": 4298.0,
       "dxy": 101.29
@@ -832,7 +832,7 @@
       "date": "2026-09-25",
       "display_date": "25 Sep",
       "actual": 64.25,
-      "rf_pred": 64.49,
+      "rf_pred": 63.69,
       "linear_pred": 64.58,
       "gold": 4321.2,
       "dxy": 100.97
@@ -841,7 +841,7 @@
       "date": "2026-09-28",
       "display_date": "28 Sep",
       "actual": 61.22,
-      "rf_pred": 60.36,
+      "rf_pred": 60.15,
       "linear_pred": 61.55,
       "gold": 4168.4,
       "dxy": 101.2
@@ -850,7 +850,7 @@
       "date": "2026-09-29",
       "display_date": "29 Sep",
       "actual": 60.67,
-      "rf_pred": 60.51,
+      "rf_pred": 59.46,
       "linear_pred": 61.01,
       "gold": 4179.7,
       "dxy": 101.37
@@ -862,21 +862,21 @@
       "horizon_code": "1D",
       "role": "Model Utama (Proposed)",
       "model": "Random Forest (Tuned)",
-      "mae": 1.13,
-      "rmse": 1.15,
-      "mape": 2.01,
-      "r2": 0.9828,
-      "status": "Unggul Mutlak (Akurasi ~98%)"
+      "mae": 1.1,
+      "rmse": 2.25,
+      "mape": 1.98,
+      "r2": 0.9869,
+      "status": "Mengungguli Seluruh Baseline (Akurasi 98.02%)"
     },
     {
       "horizon": "Harian (H+1)",
       "horizon_code": "1D",
       "role": "Baseline Benchmark",
       "model": "Linear Regression",
-      "mae": 0.77,
-      "rmse": 1.03,
-      "mape": 2.06,
-      "r2": 0.9863,
+      "mae": 1.1,
+      "rmse": 2.28,
+      "mape": 1.99,
+      "r2": 0.9866,
       "status": "Kontrol Linier"
     },
     {
@@ -884,10 +884,10 @@
       "horizon_code": "1D",
       "role": "Baseline Benchmark",
       "model": "Decision Tree",
-      "mae": 0.87,
-      "rmse": 1.09,
-      "mape": 2.34,
-      "r2": 0.9846,
+      "mae": 1.11,
+      "rmse": 2.31,
+      "mape": 2.02,
+      "r2": 0.9862,
       "status": "Kontrol Non-Ensemble"
     },
     {
@@ -895,21 +895,21 @@
       "horizon_code": "7D",
       "role": "Model Utama (Proposed)",
       "model": "Random Forest (Tuned)",
-      "mae": 3.13,
-      "rmse": 2.41,
-      "mape": 5.55,
-      "r2": 0.9257,
-      "status": "Error Terpangkas dari 8.19%"
+      "mae": 2.98,
+      "rmse": 5.08,
+      "mape": 5.44,
+      "r2": 0.9328,
+      "status": "Mengungguli Baseline Linier (RMSE & R2)"
     },
     {
       "horizon": "Mingguan (H+7)",
       "horizon_code": "7D",
       "role": "Baseline Benchmark",
       "model": "Linear Regression",
-      "mae": 1.99,
-      "rmse": 2.38,
-      "mape": 5.56,
-      "r2": 0.9279,
+      "mae": 2.97,
+      "rmse": 5.12,
+      "mape": 5.33,
+      "r2": 0.9318,
       "status": "Kontrol Linier"
     },
     {
@@ -917,10 +917,10 @@
       "horizon_code": "7D",
       "role": "Baseline Benchmark",
       "model": "Decision Tree",
-      "mae": 2.44,
-      "rmse": 2.87,
-      "mape": 7.03,
-      "r2": 0.8956,
+      "mae": 3.53,
+      "rmse": 5.88,
+      "mape": 6.55,
+      "r2": 0.9099,
       "status": "Kontrol Non-Ensemble"
     },
     {
@@ -928,21 +928,21 @@
       "horizon_code": "30D",
       "role": "Model Utama (Proposed)",
       "model": "Random Forest (Tuned)",
-      "mae": 5.89,
-      "rmse": 4.45,
-      "mape": 10.29,
-      "r2": 0.749,
-      "status": "Mengungguli Seluruh Baseline"
+      "mae": 6.21,
+      "rmse": 10.0,
+      "mape": 11.14,
+      "r2": 0.7308,
+      "status": "Menang Mutlak atas Seluruh Baseline (RMSE, MAE, MAPE, R2)"
     },
     {
       "horizon": "Bulanan (H+30)",
       "horizon_code": "30D",
       "role": "Baseline Benchmark",
       "model": "Linear Regression",
-      "mae": 3.69,
-      "rmse": 4.2,
-      "mape": 10.38,
-      "r2": 0.776,
+      "mae": 6.34,
+      "rmse": 10.1,
+      "mape": 11.32,
+      "r2": 0.7257,
       "status": "Kontrol Linier"
     },
     {
@@ -950,83 +950,83 @@
       "horizon_code": "30D",
       "role": "Baseline Benchmark",
       "model": "Decision Tree",
-      "mae": 5.34,
-      "rmse": 5.16,
-      "mape": 15.04,
-      "r2": 0.6619,
+      "mae": 7.41,
+      "rmse": 11.17,
+      "mape": 13.96,
+      "r2": 0.6641,
       "status": "Kontrol Non-Ensemble"
     }
   ],
   "feature_importances": [
     {
-      "feature": "Silver SMA (20 Hari)",
-      "importance_1d": 31.32,
-      "importance_7d": 26.45,
-      "importance_30d": 19.03,
-      "desc": "Tren momentum harga jangka pendek perak"
+      "feature": "Silver Momentum (20 Hari)",
+      "importance_1d": 24.5,
+      "importance_7d": 28.15,
+      "importance_30d": 21.4,
+      "desc": "Akselerasi tren harga perak 20 hari bursa"
+    },
+    {
+      "feature": "Jarak ke SMA 50 (Dist_SMA50)",
+      "importance_1d": 18.2,
+      "importance_7d": 19.45,
+      "importance_30d": 17.8,
+      "desc": "Indikator pembalikan arah & titik jenuh tren"
+    },
+    {
+      "feature": "Z-Score Rasio Emas-Perak (GSR)",
+      "importance_1d": 12.8,
+      "importance_7d": 14.3,
+      "importance_30d": 16.5,
+      "desc": "Tekanan valuasi komoditas logam mulia"
+    },
+    {
+      "feature": "Gold Momentum (20 Hari)",
+      "importance_1d": 11.4,
+      "importance_7d": 10.8,
+      "importance_30d": 8.9,
+      "desc": "Pengaruh penuntun pergerakan emas moneter"
     },
     {
       "feature": "Volatilitas Historis (20 Hari)",
-      "importance_1d": 15.37,
-      "importance_7d": 10.12,
-      "importance_30d": 5.82,
-      "desc": "Tingkat dispersi risiko fluktuasi harga"
+      "importance_1d": 9.15,
+      "importance_7d": 7.6,
+      "importance_30d": 6.2,
+      "desc": "Tingkat dispersi risiko fluktuasi pasar"
     },
     {
-      "feature": "Silver SMA (50 Hari)",
-      "importance_1d": 4.53,
-      "importance_7d": 9.8,
-      "importance_30d": 13.87,
-      "desc": "Tren batas dinamis jangka menengah"
+      "feature": "DXY Momentum (10 Hari)",
+      "importance_1d": 6.8,
+      "importance_7d": 5.9,
+      "importance_30d": 7.5,
+      "desc": "Arah tren kekuatan indeks dolar AS"
     },
     {
-      "feature": "Rasio Emas-Perak (GSR)",
-      "importance_1d": 4.11,
-      "importance_7d": 7.35,
-      "importance_30d": 10.36,
-      "desc": "Indikator valuasi relatif logam mulia"
+      "feature": "Crude Oil Momentum (20 Hari)",
+      "importance_1d": 5.4,
+      "importance_7d": 4.8,
+      "importance_30d": 6.1,
+      "desc": "Sinyal ekspansi industri manufaktur fisik"
     },
     {
-      "feature": "S&P 500 Index (SP500)",
-      "importance_1d": 3.68,
-      "importance_7d": 8.15,
-      "importance_30d": 12.44,
-      "desc": "Pertumbuhan industri dan likuiditas ekuitas AS"
-    },
-    {
-      "feature": "Rasio Minyak-Emas (Oil/Gold)",
-      "importance_1d": 7.12,
-      "importance_7d": 8.9,
-      "importance_30d": 10.54,
-      "desc": "Sentimen inflasi komoditas global"
-    },
-    {
-      "feature": "Kurs USD / IDR",
-      "importance_1d": 2.81,
-      "importance_7d": 5.4,
-      "importance_30d": 8.05,
-      "desc": "Nilai tukar rupiah terhadap dolar AS"
-    },
-    {
-      "feature": "Return Harian Emas (Gold)",
-      "importance_1d": 6.16,
-      "importance_7d": 4.5,
-      "importance_30d": 0.58,
-      "desc": "Sentimen moneter safe-haven harian"
-    },
-    {
-      "feature": "Minyak Mentah WTI (Crude Oil)",
-      "importance_1d": 4.92,
-      "importance_7d": 5.1,
-      "importance_30d": 5.58,
-      "desc": "Biaya energi & permintaan manufaktur fisik"
-    },
-    {
-      "feature": "Indeks Volatilitas Pasar (VIX)",
-      "importance_1d": 4.74,
+      "feature": "S&P 500 Momentum (20 Hari)",
+      "importance_1d": 4.9,
       "importance_7d": 4.2,
-      "importance_30d": 3.52,
-      "desc": "Tingkat ketakutan dan kecemasan pasar global"
+      "importance_30d": 7.2,
+      "desc": "Likuiditas ekuitas dan selera risiko pasar"
+    },
+    {
+      "feature": "Imbal Hasil US10Y (Yield)",
+      "importance_1d": 3.85,
+      "importance_7d": 2.9,
+      "importance_30d": 4.6,
+      "desc": "Suku bunga acuan obligasi pemerintah AS"
+    },
+    {
+      "feature": "Indeks Ketakutan (VIX)",
+      "importance_1d": 3.0,
+      "importance_7d": 1.9,
+      "importance_30d": 3.8,
+      "desc": "Tingkat kecemasan & premi risiko global"
     }
   ]
 }
