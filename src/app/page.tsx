@@ -11,6 +11,7 @@ import { AcademicBenchmarkTable } from "@/components/AcademicBenchmarkTable";
 import { ForwardSimulationTable } from "@/components/ForwardSimulationTable";
 import { ThesisGallerySection } from "@/components/ThesisGallerySection";
 import { AcademicConclusionsSection } from "@/components/AcademicConclusionsSection";
+import { SensitivityPlaygroundSection } from "@/components/SensitivityPlaygroundSection";
 import { Footer } from "@/components/Footer";
 import {
   Sparkles,
@@ -22,11 +23,12 @@ import {
   LayoutGrid,
   ShieldCheck,
   ChevronRight,
+  Sliders,
 } from "lucide-react";
 
 const marketData = goldyRawData as unknown as GoldyMarketData;
 
-type TabKey = "forecast" | "backtest" | "gallery" | "macro" | "conclusions" | "all";
+type TabKey = "forecast" | "sensitivity" | "backtest" | "gallery" | "macro" | "conclusions" | "all";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabKey>("forecast");
@@ -38,6 +40,12 @@ export default function Home() {
       label: "Peramalan Pasar",
       icon: <TrendingUp className="w-4 h-4" />,
       badge: "Forward 30D",
+    },
+    {
+      key: "sensitivity",
+      label: "Lab Sensitivitas",
+      icon: <Sliders className="w-4 h-4" />,
+      badge: "What-If Simulator",
     },
     {
       key: "backtest",
@@ -115,7 +123,7 @@ export default function Home() {
                 <button
                   key={tab.key}
                   onClick={() => setActiveTab(tab.key)}
-                  className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap shrink-0 ${
+                  className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap shrink-0 ${
                     isActive
                       ? "bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-lg shadow-amber-500/25 font-extrabold"
                       : "text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-800"
@@ -148,7 +156,7 @@ export default function Home() {
             {activeTab === "all" && (
               <div className="flex items-center gap-2 mb-4 pt-4 border-t border-slate-800 text-amber-400 font-mono text-sm font-bold">
                 <ChevronRight className="w-4 h-4" />
-                <span>BAGIAN 1: PERAMALAN PASAR & SIMULASI FORWARD</span>
+                <span>BAGIAN 1: PERAMALAN PASAR & SIMULASI FORWARD (30 HARI)</span>
               </div>
             )}
 
@@ -177,18 +185,38 @@ export default function Home() {
         )}
 
         {/* ========================================================================= */}
-        {/* TAB 2: EVALUASI MODEL & BACKTEST PADA DATA UJI (2024–2026) */}
+        {/* TAB 2: LABORATORIUM SIMULASI SENSITIVITAS FITUR (WHAT-IF XAI) */}
+        {/* ========================================================================= */}
+        {(activeTab === "sensitivity" || activeTab === "all") && (
+          <div className="space-y-6 animate-fadeIn">
+            {activeTab === "all" && (
+              <div className="flex items-center gap-2 mb-4 pt-8 border-t border-slate-800 text-amber-400 font-mono text-sm font-bold">
+                <ChevronRight className="w-4 h-4" />
+                <span>BAGIAN 2: LABORATORIUM SIMULASI SENSITIVITAS FITUR (XAI WHAT-IF)</span>
+              </div>
+            )}
+
+            {/* 2.1 Interactive Sensitivity Playground (Explainable AI Sliders) */}
+            <SensitivityPlaygroundSection
+              market={marketData.market_summary}
+              baseSilverPrice={marketData.market_summary.silver_usd}
+            />
+          </div>
+        )}
+
+        {/* ========================================================================= */}
+        {/* TAB 3: EVALUASI MODEL & BACKTEST PADA DATA UJI (2024–2026) */}
         {/* ========================================================================= */}
         {(activeTab === "backtest" || activeTab === "all") && (
           <div className="space-y-6 animate-fadeIn">
             {activeTab === "all" && (
               <div className="flex items-center gap-2 mb-4 pt-8 border-t border-slate-800 text-amber-400 font-mono text-sm font-bold">
                 <ChevronRight className="w-4 h-4" />
-                <span>BAGIAN 2: EVALUASI MODEL & BACKTEST PADA DATA UJI</span>
+                <span>BAGIAN 3: EVALUASI MODEL & BACKTEST PADA DATA UJI (2024–2026)</span>
               </div>
             )}
 
-            {/* 2.1 Interactive Chart - Mode Evaluasi Data Uji dengan Multi-Horizon & Layer Toggles */}
+            {/* 3.1 Interactive Chart - Mode Evaluasi Data Uji dengan Multi-Horizon & Layer Toggles */}
             <InteractiveChart
               forwardData={marketData.forward_projection}
               historicalByHorizon={marketData.historical_by_horizon}
@@ -197,58 +225,58 @@ export default function Home() {
               defaultTab="historical"
             />
 
-            {/* 2.2 Academic Benchmark Comparison (RF vs Linear vs Decision Tree) */}
+            {/* 3.2 Academic Benchmark Comparison (RF vs Linear vs Decision Tree) */}
             <AcademicBenchmarkTable metrics={marketData.metrics_table} />
           </div>
         )}
 
         {/* ========================================================================= */}
-        {/* TAB 3: GALERI VISUALISASI TERPISAH PEMODELAN (BAB 4 SKRIPSI) */}
+        {/* TAB 4: GALERI VISUALISASI TERPISAH PEMODELAN (BAB 4 SKRIPSI) */}
         {/* ========================================================================= */}
         {(activeTab === "gallery" || activeTab === "all") && (
           <div className="space-y-6 animate-fadeIn">
             {activeTab === "all" && (
               <div className="flex items-center gap-2 mb-4 pt-8 border-t border-slate-800 text-amber-400 font-mono text-sm font-bold">
                 <ChevronRight className="w-4 h-4" />
-                <span>BAGIAN 3: GALERI VISUALISASI TERPISAH PEMODELAN (BAB 4)</span>
+                <span>BAGIAN 4: GALERI VISUALISASI TERPISAH PEMODELAN (BAB 4 SKRIPSI)</span>
               </div>
             )}
 
-            {/* 3.1 Galeri 8 Visualisasi Terpisah Bab 4 Skripsi (Gambar 9.1 - 9.8) */}
+            {/* 4.1 Galeri 8 Visualisasi Terpisah Bab 4 Skripsi (Gambar 9.1 - 9.8) */}
             <ThesisGallerySection figures={marketData.thesis_figures} />
           </div>
         )}
 
         {/* ========================================================================= */}
-        {/* TAB 4: FAKTOR MAKROEKONOMI & FEATURE IMPORTANCE */}
+        {/* TAB 5: FAKTOR MAKROEKONOMI & FEATURE IMPORTANCE */}
         {/* ========================================================================= */}
         {(activeTab === "macro" || activeTab === "all") && (
           <div className="space-y-6 animate-fadeIn">
             {activeTab === "all" && (
               <div className="flex items-center gap-2 mb-4 pt-8 border-t border-slate-800 text-amber-400 font-mono text-sm font-bold">
                 <ChevronRight className="w-4 h-4" />
-                <span>BAGIAN 4: FAKTOR MAKROEKONOMI & FEATURE IMPORTANCE</span>
+                <span>BAGIAN 5: FAKTOR MAKROEKONOMI & FEATURE IMPORTANCE</span>
               </div>
             )}
 
-            {/* 4.1 Macro Drivers & Feature Importance */}
+            {/* 5.1 Macro Drivers & Feature Importance */}
             <MacroDriversSection features={marketData.feature_importances} />
           </div>
         )}
 
         {/* ========================================================================= */}
-        {/* TAB 5: KESIMPULAN PENELITIAN & PANDUAN SIDANG (BAB 5) */}
+        {/* TAB 6: KESIMPULAN PENELITIAN & PANDUAN SIDANG (BAB 5) */}
         {/* ========================================================================= */}
         {(activeTab === "conclusions" || activeTab === "all") && (
           <div className="space-y-6 animate-fadeIn">
             {activeTab === "all" && (
               <div className="flex items-center gap-2 mb-4 pt-8 border-t border-slate-800 text-amber-400 font-mono text-sm font-bold">
                 <ChevronRight className="w-4 h-4" />
-                <span>BAGIAN 5: KESIMPULAN PENELITIAN & PANDUAN SIDANG SKRIPSI</span>
+                <span>BAGIAN 6: KESIMPULAN PENELITIAN & PANDUAN SIDANG SKRIPSI</span>
               </div>
             )}
 
-            {/* 5.1 Kesimpulan Penelitian & Validasi Akademis Bab 5 */}
+            {/* 6.1 Kesimpulan Penelitian & Validasi Akademis Bab 5 */}
             <AcademicConclusionsSection conclusions={marketData.academic_conclusions} />
           </div>
         )}
