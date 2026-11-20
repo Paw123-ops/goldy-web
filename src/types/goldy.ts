@@ -55,8 +55,11 @@ export interface HistoricalChartItem {
   actual: number;
   rf_pred: number;
   linear_pred: number;
-  gold: number;
-  dxy: number;
+  dt_pred?: number;
+  upper_bound_95?: number;
+  lower_bound_95?: number;
+  gold?: number;
+  dxy?: number;
 }
 
 export interface MetricItem {
@@ -79,6 +82,23 @@ export interface FeatureImportanceItem {
   desc: string;
 }
 
+export interface ThesisFigureItem {
+  id: string;
+  number: string;
+  title: string;
+  filename: string;
+  image_url: string;
+  description: string;
+  metrics_highlight: string;
+  category: string;
+}
+
+export interface AcademicConclusionItem {
+  point: string;
+  badge: string;
+  desc: string;
+}
+
 export interface GoldyMarketData {
   project_meta: ProjectMeta;
   market_summary: MarketSummary;
@@ -89,7 +109,13 @@ export interface GoldyMarketData {
   };
   forward_projection: ForwardProjectionItem[];
   historical_chart: HistoricalChartItem[];
+  historical_by_horizon: {
+    "1d": HistoricalChartItem[];
+    "7d": HistoricalChartItem[];
+    "30d": HistoricalChartItem[];
+  };
   metrics_table: MetricItem[];
   feature_importances: FeatureImportanceItem[];
+  thesis_figures: ThesisFigureItem[];
+  academic_conclusions: AcademicConclusionItem[];
 }
-

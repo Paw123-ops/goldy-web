@@ -9,10 +9,12 @@ import { InteractiveChart } from "@/components/InteractiveChart";
 import { MacroDriversSection } from "@/components/MacroDriversSection";
 import { AcademicBenchmarkTable } from "@/components/AcademicBenchmarkTable";
 import { ForwardSimulationTable } from "@/components/ForwardSimulationTable";
+import { ThesisGallerySection } from "@/components/ThesisGallerySection";
+import { AcademicConclusionsSection } from "@/components/AcademicConclusionsSection";
 import { Footer } from "@/components/Footer";
-import { Sparkles, BarChart2 } from "lucide-react";
+import { Sparkles, BarChart2, ShieldCheck } from "lucide-react";
 
-const marketData = goldyRawData as GoldyMarketData;
+const marketData = goldyRawData as unknown as GoldyMarketData;
 
 export default function Home() {
   const [activeHorizon, setActiveHorizon] = useState<"1d" | "7d" | "30d">("1d");
@@ -45,32 +47,39 @@ export default function Home() {
           </div>
 
           <div className="flex items-center gap-2 text-xs font-mono text-slate-400 shrink-0 bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-800">
-            <BarChart2 className="w-4 h-4 text-emerald-400" />
-            <span>Multi-Horizon: H+1, H+7, H+30</span>
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <span>Anti-Overfitting • 95% Volatility Spread</span>
           </div>
         </div>
 
-        {/* 1. Hero 3 Forecast Cards */}
+        {/* 1. Hero 3 Forecast Cards (H+1, H+7, H+30) */}
         <HeroForecastCards
           cards={marketData.forecast_cards}
           activeHorizon={activeHorizon}
           onSelectHorizon={setActiveHorizon}
         />
 
-        {/* 2. Interactive Charts (30-day Fan Chart + Historical Backtest) */}
+        {/* 2. Interactive Charts (30-day Fan Chart + Historical Backtest with Multi-Horizon & Layer Toggles) */}
         <InteractiveChart
           forwardData={marketData.forward_projection}
-          historicalData={marketData.historical_chart}
+          historicalByHorizon={marketData.historical_by_horizon}
           activeHorizon={activeHorizon}
+          onSelectHorizon={setActiveHorizon}
         />
 
-        {/* 3. Macro Drivers & Feature Importance */}
+        {/* 3. Galeri Visualisasi Terpisah Bab 4 Skripsi (Gambar 9.1 - 9.8) */}
+        <ThesisGallerySection figures={marketData.thesis_figures} />
+
+        {/* 4. Macro Drivers & Feature Importance */}
         <MacroDriversSection features={marketData.feature_importances} />
 
-        {/* 4. Academic Benchmark Comparison (RF vs Linear vs Decision Tree) */}
+        {/* 5. Academic Benchmark Comparison (RF vs Linear vs Decision Tree) */}
         <AcademicBenchmarkTable metrics={marketData.metrics_table} />
 
-        {/* 5. Forward 30-day Projections Data Table */}
+        {/* 6. Kesimpulan Penelitian & Validasi Akademis Bab 5 */}
+        <AcademicConclusionsSection conclusions={marketData.academic_conclusions} />
+
+        {/* 7. Forward 30-day Projections Data Table */}
         <ForwardSimulationTable
           projections={marketData.forward_projection}
           usdIdrRate={marketData.market_summary.usd_idr}
