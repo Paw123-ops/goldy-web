@@ -24,6 +24,7 @@ interface InteractiveChartProps {
   };
   activeHorizon: "1d" | "7d" | "30d";
   onSelectHorizon?: (horizon: "1d" | "7d" | "30d") => void;
+  defaultTab?: "forward" | "historical";
 }
 
 export const InteractiveChart: React.FC<InteractiveChartProps> = ({
@@ -31,8 +32,9 @@ export const InteractiveChart: React.FC<InteractiveChartProps> = ({
   historicalByHorizon,
   activeHorizon,
   onSelectHorizon,
+  defaultTab = "forward",
 }) => {
-  const [activeTab, setActiveTab] = useState<"forward" | "historical">("forward");
+  const [activeTab, setActiveTab] = useState<"forward" | "historical">(defaultTab);
 
   // Model toggles for historical chart
   const [showActual, setShowActual] = useState(true);
