@@ -92,3 +92,28 @@ input[type=range]::-webkit-slider-thumb:hover {
   transform: scale(1.15);
   box-shadow: 0 0 15px rgba(245, 158, 11, 0.8), 0 0 0 3px #0f172a;
 }
+
+/* Smooth Slide Section Animation */
+@keyframes slideSectionIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-slide-section {
+  animation: slideSectionIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Scrollbar Utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import goldyRawData from "@/data/goldy_market_data.json";
 import { GoldyMarketData } from "@/types/goldy";
 import { HeaderTicker } from "@/components/HeaderTicker";
@@ -24,6 +24,9 @@ import {
   LayoutGrid,
   ShieldCheck,
   ChevronRight,
+  ChevronLeft,
+  ArrowRight,
+  ArrowLeft,
   Sliders,
   Award,
   Cpu,
@@ -36,6 +39,61 @@ type TabKey = "forecast" | "predict" | "sensitivity" | "backtest" | "gallery" | 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabKey>("forecast");
   const [activeHorizon, setActiveHorizon] = useState<"1d" | "7d" | "30d">("1d");
+  const tabsRef = useRef<HTMLDivElement>(null);
+
+  // Enable mouse wheel horizontal scrolling WITHOUT holding Shift!
+  useEffect(() => {
+    const el = tabsRef.current;
+    if (!el) return;
+    const onWheel = (e: WheelEvent) => {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        el.scrollBy({ left: e.deltaY * 1.6, behavior: "smooth" });
+      }
+    };
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, []);
+
+  // Smooth scroll helper for Left & Right buttons
+  const scrollTabs = (direction: "left" | "right") => {
+    if (tabsRef.current) {
+      tabsRef.current.scrollBy({
+        left: direction === "left" ? -280 : 280,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  // Auto-scroll active tab into view when changed
+  useEffect(() => {
+    if (tabsRef.current) {
+      const activeBtn = tabsRef.current.querySelector<HTMLButtonElement>(`[data-tab="${activeTab}"]`);
+      if (activeBtn) {
+        activeBtn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      }
+    }
+  }, [activeTab]);
+
+  // Section slides definition for presentation-like slide transitions
+  const sectionSlides: { key: TabKey; label: string; number: number }[] = [
+    { key: "forecast", label: "Peramalan Pasar (Forward 30D)", number: 1 },
+    { key: "predict", label: "Kalkulator ML Live", number: 2 },
+    { key: "sensitivity", label: "Lab Sensitivitas What-If", number: 3 },
+    { key: "backtest", label: "Evaluasi & Backtest Data Uji", number: 4 },
+    { key: "gallery", label: "Galeri Visualisasi", number: 5 },
+    { key: "macro", label: "Faktor Makro & Feature Weights", number: 6 },
+    { key: "conclusions", label: "Kesimpulan & Panduan Sidang", number: 7 },
+  ];
+
+  const currentSlideIdx = sectionSlides.findIndex((s) => s.key === activeTab);
+  const prevSlide = currentSlideIdx > 0 ? sectionSlides[currentSlideIdx - 1] : null;
+  const nextSlide = currentSlideIdx < sectionSlides.length - 1 ? sectionSlides[currentSlideIdx + 1] : null;
+
+  const navigateToSlide = (key: TabKey) => {
+    setActiveTab(key);
+    window.scrollTo({ top: 120, behavior: "smooth" });
+  };
 
   const tabs: { key: TabKey; label: string; icon: React.ReactNode; badge: string }[] = [
     {
@@ -131,19 +189,37 @@ export default function Home() {
         </div>
 
         {/* ========================================================================= */}
-        {/* LUXURY FLOATING TAB NAVIGATION DOCK */}
+        {/* LUXURY FLOATING TAB NAVIGATION DOCK WITH SMOOTH SLIDE CONTROLS */}
         {/* ========================================================================= */}
-        <div className="mb-8 sticky top-20 z-40 bg-slate-950/85 backdrop-blur-2xl p-2 rounded-2xl border border-slate-800/80 shadow-[0_12px_40px_rgba(0,0,0,0.6)]">
-          <div className="flex items-center overflow-x-auto scrollbar-none gap-2">
+        <div className="mb-8 sticky top-20 z-40 bg-slate-950/90 backdrop-blur-2xl p-2 rounded-2xl border border-slate-800/80 shadow-[0_12px_40px_rgba(0,0,0,0.6)] flex items-center gap-1.5">
+          {/* Scroll Left Button (Slide Tabs) */}
+          <button
+            onClick={() => scrollTabs("left")}
+            title="Geser tab ke kiri"
+            aria-label="Geser tab ke kiri"
+            className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-400 hover:text-amber-400 border border-slate-800/80 hover:border-amber-500/30 transition shrink-0 cursor-pointer shadow-md"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+
+          {/* Scrollable Tabs Container (Direct Mouse Wheel Supported Without Shift!) */}
+          <div
+            ref={tabsRef}
+            className="flex-1 flex items-center overflow-x-auto no-scrollbar gap-2 scroll-smooth py-0.5"
+          >
             {tabs.map((tab) => {
               const isActive = activeTab === tab.key;
               return (
                 <button
                   key={tab.key}
-                  onClick={() => setActiveTab(tab.key)}
-                  className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap shrink-0 ${
+                  data-tab={tab.key}
+                  onClick={() => {
+                    setActiveTab(tab.key);
+                    window.scrollTo({ top: 120, behavior: "smooth" });
+                  }}
+                  className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap shrink-0 cursor-pointer ${
                     isActive
-                      ? "bg-gradient-to-r from-amber-500 via-amber-500 to-amber-600 text-slate-950 shadow-[0_4px_20px_rgba(245,158,11,0.35)] font-black"
+                      ? "bg-gradient-to-r from-amber-500 via-amber-500 to-amber-600 text-slate-950 shadow-[0_4px_20px_rgba(245,158,11,0.35)] font-black scale-[1.02]"
                       : "text-slate-400 hover:text-white hover:bg-slate-900/90 border border-transparent hover:border-slate-800"
                   }`}
                 >
@@ -164,13 +240,23 @@ export default function Home() {
               );
             })}
           </div>
+
+          {/* Scroll Right Button (Slide Tabs) */}
+          <button
+            onClick={() => scrollTabs("right")}
+            title="Geser tab ke kanan"
+            aria-label="Geser tab ke kanan"
+            className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-400 hover:text-amber-400 border border-slate-800/80 hover:border-amber-500/30 transition shrink-0 cursor-pointer shadow-md"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
         </div>
 
         {/* ========================================================================= */}
         {/* TAB 1: PERAMALAN PASAR & SIMULASI FORWARD (30 HARI) */}
         {/* ========================================================================= */}
         {(activeTab === "forecast" || activeTab === "all") && (
-          <div className="space-y-4 animate-fadeIn">
+          <div className="space-y-4 animate-slide-section">
             {activeTab === "all" && (
               <div className="flex items-center gap-2 mb-4 pt-4 border-t border-slate-800 text-amber-400 font-mono text-sm font-bold">
                 <ChevronRight className="w-4 h-4" />
@@ -206,7 +292,7 @@ export default function Home() {
         {/* TAB 2: KALKULATOR PREDIKSI REAL-TIME (LIVE ML ENGINE) */}
         {/* ========================================================================= */}
         {(activeTab === "predict" || activeTab === "all") && (
-          <div className="space-y-6 animate-fadeIn">
+          <div className="space-y-6 animate-slide-section">
             {activeTab === "all" && (
               <div className="flex items-center gap-2 mb-4 pt-8 border-t border-slate-800 text-amber-400 font-mono text-sm font-bold">
                 <ChevronRight className="w-4 h-4" />
@@ -223,7 +309,7 @@ export default function Home() {
         {/* TAB 3: LABORATORIUM SIMULASI SENSITIVITAS FITUR (WHAT-IF XAI) */}
         {/* ========================================================================= */}
         {(activeTab === "sensitivity" || activeTab === "all") && (
-          <div className="space-y-6 animate-fadeIn">
+          <div className="space-y-6 animate-slide-section">
             {activeTab === "all" && (
               <div className="flex items-center gap-2 mb-4 pt-8 border-t border-slate-800 text-amber-400 font-mono text-sm font-bold">
                 <ChevronRight className="w-4 h-4" />
@@ -243,7 +329,7 @@ export default function Home() {
         {/* TAB 4: EVALUASI MODEL & BACKTEST PADA DATA UJI (2024–2026) */}
         {/* ========================================================================= */}
         {(activeTab === "backtest" || activeTab === "all") && (
-          <div className="space-y-6 animate-fadeIn">
+          <div className="space-y-6 animate-slide-section">
             {activeTab === "all" && (
               <div className="flex items-center gap-2 mb-4 pt-8 border-t border-slate-800 text-amber-400 font-mono text-sm font-bold">
                 <ChevronRight className="w-4 h-4" />
@@ -269,7 +355,7 @@ export default function Home() {
         {/* TAB 5: GALERI VISUALISASI TERPISAH PEMODELAN */}
         {/* ========================================================================= */}
         {(activeTab === "gallery" || activeTab === "all") && (
-          <div className="space-y-6 animate-fadeIn">
+          <div className="space-y-6 animate-slide-section">
             {activeTab === "all" && (
               <div className="flex items-center gap-2 mb-4 pt-8 border-t border-slate-800 text-amber-400 font-mono text-sm font-bold">
                 <ChevronRight className="w-4 h-4" />
@@ -286,7 +372,7 @@ export default function Home() {
         {/* TAB 6: FAKTOR MAKROEKONOMI & FEATURE IMPORTANCE */}
         {/* ========================================================================= */}
         {(activeTab === "macro" || activeTab === "all") && (
-          <div className="space-y-6 animate-fadeIn">
+          <div className="space-y-6 animate-slide-section">
             {activeTab === "all" && (
               <div className="flex items-center gap-2 mb-4 pt-8 border-t border-slate-800 text-amber-400 font-mono text-sm font-bold">
                 <ChevronRight className="w-4 h-4" />
@@ -303,7 +389,7 @@ export default function Home() {
         {/* TAB 7: KESIMPULAN PENELITIAN & PANDUAN SIDANG */}
         {/* ========================================================================= */}
         {(activeTab === "conclusions" || activeTab === "all") && (
-          <div className="space-y-6 animate-fadeIn">
+          <div className="space-y-6 animate-slide-section">
             {activeTab === "all" && (
               <div className="flex items-center gap-2 mb-4 pt-8 border-t border-slate-800 text-amber-400 font-mono text-sm font-bold">
                 <ChevronRight className="w-4 h-4" />
@@ -313,6 +399,67 @@ export default function Home() {
 
             {/* 7.1 Kesimpulan Penelitian & Validasi Akademis */}
             <AcademicConclusionsSection conclusions={marketData.academic_conclusions} />
+          </div>
+        )}
+
+        {/* ========================================================================= */}
+        {/* PRESENTATION SECTION SLIDE CONTROLLER (BOTTOM DOCK) */}
+        {/* ========================================================================= */}
+        {activeTab !== "all" && currentSlideIdx !== -1 && (
+          <div className="mt-12 p-4 sm:p-5 rounded-3xl bg-slate-950/85 border border-slate-800/80 backdrop-blur-xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
+            {/* Prev Slide Button */}
+            {prevSlide ? (
+              <button
+                onClick={() => navigateToSlide(prevSlide.key)}
+                className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700/60 hover:border-slate-600 transition flex items-center justify-center gap-2 text-xs font-bold cursor-pointer"
+              >
+                <ArrowLeft className="w-4 h-4 text-amber-400" />
+                <span>Slide Sebelumnya: {prevSlide.label}</span>
+              </button>
+            ) : (
+              <div className="hidden sm:block w-40" />
+            )}
+
+            {/* Slide Indicators Dots */}
+            <div className="flex flex-col sm:flex-row items-center gap-2.5">
+              <span className="text-xs text-slate-400 font-mono">
+                Slide {currentSlideIdx + 1} dari {sectionSlides.length}
+              </span>
+              <div className="flex items-center gap-1.5">
+                {sectionSlides.map((sec, idx) => (
+                  <button
+                    key={sec.key}
+                    onClick={() => navigateToSlide(sec.key)}
+                    title={sec.label}
+                    aria-label={sec.label}
+                    className={`h-2 rounded-full transition-all cursor-pointer ${
+                      idx === currentSlideIdx
+                        ? "w-7 bg-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.6)]"
+                        : "w-2 bg-slate-700 hover:bg-slate-500"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Next Slide Button */}
+            {nextSlide ? (
+              <button
+                onClick={() => navigateToSlide(nextSlide.key)}
+                className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black transition flex items-center justify-center gap-2 text-xs shadow-lg shadow-amber-500/20 cursor-pointer"
+              >
+                <span>Lanjut ke Slide {nextSlide.number}: {nextSlide.label}</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            ) : (
+              <button
+                onClick={() => navigateToSlide("all")}
+                className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-amber-400 border border-amber-500/30 transition flex items-center justify-center gap-2 text-xs font-bold cursor-pointer"
+              >
+                <span>Buka Tampilan Lengkap</span>
+                <LayoutGrid className="w-4 h-4" />
+              </button>
+            )}
           </div>
         )}
       </main>
