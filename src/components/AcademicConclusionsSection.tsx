@@ -22,7 +22,7 @@ export const AcademicConclusionsSection: React.FC<AcademicConclusionsSectionProp
           <div className="flex items-center gap-2 mb-1">
             <BookOpen className="w-5 h-5 text-amber-400" />
             <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-              Kesimpulan Hasil Penelitian & Validasi Akademis (Bab 5)
+              Kesimpulan Hasil Penelitian & Validasi Akademis
             </h3>
           </div>
           <p className="text-xs text-slate-400 font-sans">
@@ -60,7 +60,7 @@ export const AcademicConclusionsSection: React.FC<AcademicConclusionsSectionProp
 
             <div className="mt-4 pt-3 border-t border-slate-800/60 flex items-center gap-1.5 text-[11px] font-mono text-emerald-400">
               <CheckCircle className="w-3.5 h-3.5" />
-              <span>Validasi Terpenuhi di Bab 4</span>
+              <span>Validasi Terpenuhi Secara Ilmiah</span>
             </div>
           </div>
         ))}

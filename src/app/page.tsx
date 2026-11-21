@@ -66,7 +66,7 @@ export default function Home() {
       key: "gallery",
       label: "Galeri Visualisasi",
       icon: <ImageIcon className="w-4 h-4" />,
-      badge: "8 Gambar Bab 4",
+      badge: "8 Visualisasi",
     },
     {
       key: "macro",
@@ -78,7 +78,7 @@ export default function Home() {
       key: "conclusions",
       label: "Kesimpulan & Sidang",
       icon: <GraduationCap className="w-4 h-4" />,
-      badge: "Bab 5 Skripsi",
+      badge: "Temuan Ilmiah",
     },
     {
       key: "all",
@@ -266,18 +266,18 @@ export default function Home() {
         )}
 
         {/* ========================================================================= */}
-        {/* TAB 5: GALERI VISUALISASI TERPISAH PEMODELAN (BAB 4 SKRIPSI) */}
+        {/* TAB 5: GALERI VISUALISASI TERPISAH PEMODELAN */}
         {/* ========================================================================= */}
         {(activeTab === "gallery" || activeTab === "all") && (
           <div className="space-y-6 animate-fadeIn">
             {activeTab === "all" && (
               <div className="flex items-center gap-2 mb-4 pt-8 border-t border-slate-800 text-amber-400 font-mono text-sm font-bold">
                 <ChevronRight className="w-4 h-4" />
-                <span>BAGIAN 5: GALERI VISUALISASI TERPISAH PEMODELAN (BAB 4 SKRIPSI)</span>
+                <span>BAGIAN 5: GALERI VISUALISASI TERPISAH PEMODELAN</span>
               </div>
             )}
 
-            {/* 5.1 Galeri 8 Visualisasi Terpisah Bab 4 Skripsi (Gambar 9.1 - 9.8) */}
+            {/* 5.1 Galeri 8 Visualisasi Terpisah Pemodelan */}
             <ThesisGallerySection figures={marketData.thesis_figures} />
           </div>
         )}
@@ -300,7 +300,7 @@ export default function Home() {
         )}
 
         {/* ========================================================================= */}
-        {/* TAB 7: KESIMPULAN PENELITIAN & PANDUAN SIDANG (BAB 5) */}
+        {/* TAB 7: KESIMPULAN PENELITIAN & PANDUAN SIDANG */}
         {/* ========================================================================= */}
         {(activeTab === "conclusions" || activeTab === "all") && (
           <div className="space-y-6 animate-fadeIn">
@@ -311,7 +311,7 @@ export default function Home() {
               </div>
             )}
 
-            {/* 6.1 Kesimpulan Penelitian & Validasi Akademis Bab 5 */}
+            {/* 7.1 Kesimpulan Penelitian & Validasi Akademis */}
             <AcademicConclusionsSection conclusions={marketData.academic_conclusions} />
           </div>
         )}

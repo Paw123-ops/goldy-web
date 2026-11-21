@@ -19,7 +19,7 @@ export const AcademicBenchmarkTable: React.FC<AcademicBenchmarkTableProps> = ({ 
           <div className="flex items-center gap-2 mb-1">
             <GraduationCap className="w-5 h-5 text-amber-400" />
             <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-              Tabel Validasi Ilmiah & Komparasi Model (Bab 4 Skripsi)
+              Tabel Validasi Ilmiah & Komparasi Model
             </h3>
           </div>
           <p className="text-xs text-slate-400 font-sans">

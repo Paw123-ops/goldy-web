@@ -30,7 +30,7 @@ export const ThesisGallerySection: React.FC<ThesisGallerySectionProps> = ({ figu
           <div className="flex items-center gap-2 mb-1">
             <ImageIcon className="w-5 h-5 text-amber-400" />
             <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-              Galeri Visualisasi Terpisah Pemodelan (Bab 4 Skripsi)
+              Galeri Visualisasi Terpisah Pemodelan
             </h3>
           </div>
           <p className="text-xs text-slate-400 font-sans">

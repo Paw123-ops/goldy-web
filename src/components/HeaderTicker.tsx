@@ -49,7 +49,7 @@ export const HeaderTicker: React.FC<HeaderTickerProps> = ({ meta, market }) => {
 
           <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 shadow-sm">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span className="font-bold">Model Verified (Bab 4)</span>
+            <span className="font-bold">Model Verified</span>
           </div>
 
           <div className="hidden lg:block text-right pl-2 border-l border-slate-800">
