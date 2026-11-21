@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Goldy | Prediksi Harga Perak Multi-Horizon Berbasis Random Forest",
   description:
-    "Web Platform Intelijen Prediksi Harga Perak (COMEX SI=F) Multi-Horizon Berbasis Machine Learning Random Forest - Tugas Akhir Aa Wafi",
+    "Web Platform Intelijen Prediksi Harga Perak (COMEX SI=F) Multi-Horizon Berbasis Machine Learning Random Forest - Tugas Akhir Muhammad Nurwafi Muharom",
 };
 
 export default function RootLayout({

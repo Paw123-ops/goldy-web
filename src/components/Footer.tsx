@@ -55,7 +55,7 @@ export const Footer: React.FC<FooterProps> = ({ meta }) => {
       </div>
 
       <div className="max-w-7xl mx-auto mt-8 pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500 font-mono">
-        <div>© 2026 Goldy Web Platform — Hak Cipta Riset Aa Wafi. Dilindungi Undang-Undang.</div>
+        <div>© 2026 Goldy Web Platform — Hak Cipta Riset Muhammad Nurwafi Muharom. Dilindungi Undang-Undang.</div>
         <div className="flex items-center gap-4">
           <span>Engine: Scikit-Learn Random Forest</span>
           <span>•</span>

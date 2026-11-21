@@ -198,7 +198,7 @@ export async function POST(request: Request) {
         trees: 200,
         validation_mape: 1.98,
         validation_r2: 0.9869,
-        developer: "Aa Wafi",
+        developer: "Muhammad Nurwafi Muharom",
         thesis_title: "Prediksi Harga Perak Dengan Menggunakan Algoritma Random Forest dan Pengembangan Web Platform Goldy",
       },
       inputs_received: inputs,
@@ -224,7 +224,7 @@ export async function GET() {
     endpoint: "/api/predict",
     description: "Goldy Machine Learning Prediction API Endpoint (POST to predict)",
     algorithm: "Random Forest Regressor Multi-Horizon (H+1, H+7, H+30)",
-    author: "Aa Wafi",
+    author: "Muhammad Nurwafi Muharom",
     example_payload: {
       silver_usd: 60.67,
       gold_usd: 4180.0,
