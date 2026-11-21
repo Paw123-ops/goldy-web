@@ -42,16 +42,19 @@ export const ForwardSimulationTable: React.FC<ForwardSimulationTableProps> = ({
   };
 
   return (
-    <section className="mb-10 rounded-2xl bg-slate-900/80 border border-slate-800 p-6 shadow-xl">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-800">
+    <section className="mb-10 rounded-3xl bg-slate-900/40 border border-slate-800/80 backdrop-blur-xl p-6 sm:p-7 shadow-2xl relative overflow-hidden">
+      {/* Background Ambient Glow */}
+      <div className="absolute top-0 left-1/3 w-80 h-80 bg-amber-500/5 rounded-full blur-3xl pointer-events-none -z-10" />
+
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-5 border-b border-slate-800/80">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <CalendarDays className="w-5 h-5 text-amber-400" />
-            <h3 className="text-xl font-black text-white tracking-tight">
+            <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
               Tabel Proyeksi Harga 30 Hari Bursa ke Depan
             </h3>
           </div>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-slate-400 font-sans">
             Daftar estimasi nominal harian lengkap dengan koridor batas risiko 95%
           </p>
         </div>

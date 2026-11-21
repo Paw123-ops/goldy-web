@@ -14,7 +14,9 @@ export const MacroDriversSection: React.FC<MacroDriversSectionProps> = ({ featur
   return (
     <section className="mb-10 grid grid-cols-1 lg:grid-cols-12 gap-6">
       {/* Feature Importance Column (7 cols) */}
-      <div className="lg:col-span-7 rounded-2xl bg-slate-900/80 border border-slate-800 p-6 shadow-xl flex flex-col justify-between">
+      <div className="lg:col-span-7 rounded-3xl bg-slate-900/40 border border-slate-800/80 backdrop-blur-xl p-6 sm:p-7 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+        {/* Subtle Ambient Glow */}
+        <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/5 rounded-full blur-3xl pointer-events-none -z-10" />
         <div>
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-800">
             <div>
@@ -96,7 +98,9 @@ export const MacroDriversSection: React.FC<MacroDriversSectionProps> = ({ featur
       </div>
 
       {/* Intermarket Principle Column (5 cols) */}
-      <div className="lg:col-span-5 rounded-2xl bg-slate-900/80 border border-slate-800 p-6 shadow-xl flex flex-col justify-between">
+      <div className="lg:col-span-5 rounded-3xl bg-slate-900/40 border border-slate-800/80 backdrop-blur-xl p-6 sm:p-7 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+        {/* Subtle Ambient Glow */}
+        <div className="absolute top-0 right-0 w-80 h-80 bg-sky-500/5 rounded-full blur-3xl pointer-events-none -z-10" />
         <div>
           <div className="flex items-center gap-2 mb-4 pb-4 border-b border-slate-800">
             <Layers className="w-5 h-5 text-amber-400" />

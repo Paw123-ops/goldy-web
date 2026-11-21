@@ -66,13 +66,16 @@ export const InteractiveChart: React.FC<InteractiveChartProps> = ({
   };
 
   return (
-    <section className="mb-10 rounded-2xl bg-slate-900/80 border border-slate-800 p-6 shadow-xl">
+    <section className="mb-10 rounded-3xl bg-slate-900/40 border border-slate-800/80 backdrop-blur-xl p-6 sm:p-7 shadow-2xl relative overflow-hidden">
+      {/* Subtle Ambient Background Light */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none -z-10" />
+
       {/* Header & Tabs */}
-      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 pb-6 border-b border-slate-800/80">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <LineChartIcon className="w-5 h-5 text-amber-400" />
-            <h3 className="text-xl font-black text-white tracking-tight">
+            <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
               Visualisasi Kuantitatif Perak COMEX
             </h3>
           </div>
@@ -84,12 +87,12 @@ export const InteractiveChart: React.FC<InteractiveChartProps> = ({
         </div>
 
         {/* Tab Buttons */}
-        <div className="flex items-center p-1 rounded-xl bg-slate-950 border border-slate-800">
+        <div className="flex items-center p-1.5 rounded-2xl bg-slate-950/80 border border-slate-800 shadow-inner">
           <button
             onClick={() => setActiveTab("forward")}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold transition-all ${
+            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
               activeTab === "forward"
-                ? "bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20"
+                ? "bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-md shadow-amber-500/20 font-black"
                 : "text-slate-400 hover:text-white"
             }`}
           >
@@ -98,9 +101,9 @@ export const InteractiveChart: React.FC<InteractiveChartProps> = ({
           </button>
           <button
             onClick={() => setActiveTab("historical")}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold transition-all ${
+            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
               activeTab === "historical"
-                ? "bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20"
+                ? "bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-md shadow-amber-500/20 font-black"
                 : "text-slate-400 hover:text-white"
             }`}
           >
