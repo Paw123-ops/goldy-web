@@ -117,3 +117,29 @@ input[type=range]::-webkit-slider-thumb:hover {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Print-Ready PDF Styles */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  /* Hide regular web elements on print */
+  header,
+  footer,
+  .no-print,
+  nav,
+  aside,
+  main > div:not(.print-container) {
+    display: none !important;
+  }
+
+  /* Optimize modal container for pure paper printing */
+  .fixed.inset-0 {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+}

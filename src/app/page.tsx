@@ -14,6 +14,7 @@ import { AcademicConclusionsSection } from "@/components/AcademicConclusionsSect
 import { SensitivityPlaygroundSection } from "@/components/SensitivityPlaygroundSection";
 import { LiveMlPredictorSection } from "@/components/LiveMlPredictorSection";
 import { InvestmentSimulatorSection } from "@/components/InvestmentSimulatorSection";
+import { ExecutiveReportModal } from "@/components/ExecutiveReportModal";
 import { Footer } from "@/components/Footer";
 import {
   Sparkles,
@@ -32,6 +33,7 @@ import {
   Award,
   Cpu,
   Wallet,
+  FileText,
 } from "lucide-react";
 
 const marketData = goldyRawData as unknown as GoldyMarketData;
@@ -41,6 +43,7 @@ type TabKey = "forecast" | "predict" | "investment" | "sensitivity" | "backtest"
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabKey>("forecast");
   const [activeHorizon, setActiveHorizon] = useState<"1d" | "7d" | "30d">("1d");
+  const [isReportOpen, setIsReportOpen] = useState<boolean>(false);
   const tabsRef = useRef<HTMLDivElement>(null);
 
   // Enable mouse wheel horizontal scrolling WITHOUT holding Shift!
@@ -163,7 +166,11 @@ export default function Home() {
       <div className="absolute top-[800px] left-10 w-[600px] h-[500px] bg-emerald-500/[0.04] rounded-full blur-[180px] pointer-events-none -z-10" />
 
       {/* Real-time Header & Ticker */}
-      <HeaderTicker meta={marketData.project_meta} market={marketData.market_summary} />
+      <HeaderTicker
+        meta={marketData.project_meta}
+        market={marketData.market_summary}
+        onOpenReport={() => setIsReportOpen(true)}
+      />
 
       {/* Main Container */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 relative">
@@ -191,9 +198,20 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex items-center gap-2 text-xs font-mono text-slate-300 shrink-0 bg-slate-950/80 px-3.5 py-2 rounded-2xl border border-slate-800 shadow-inner">
-            <Sparkles className="w-4 h-4 text-amber-400" />
-            <span>Koridor Risiko 95% Volatility-Adaptive</span>
+          <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+            <button
+              onClick={() => setIsReportOpen(true)}
+              className="flex items-center gap-2 px-4 py-2 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs transition shadow-lg shadow-amber-500/20 cursor-pointer active:scale-95"
+              title="Unduh / Cetak Laporan Eksekutif Resmi (PDF)"
+            >
+              <FileText className="w-4 h-4" />
+              <span>Unduh Dokumen Riset (PDF)</span>
+            </button>
+
+            <div className="flex items-center gap-2 text-xs font-mono text-slate-300 bg-slate-950/80 px-3.5 py-2 rounded-2xl border border-slate-800 shadow-inner">
+              <Sparkles className="w-4 h-4 text-amber-400" />
+              <span>Koridor Risiko 95% Volatility-Adaptive</span>
+            </div>
           </div>
         </div>
 
@@ -428,7 +446,10 @@ export default function Home() {
             )}
 
             {/* 8.1 Kesimpulan Penelitian & Validasi Akademis */}
-            <AcademicConclusionsSection conclusions={marketData.academic_conclusions} />
+            <AcademicConclusionsSection
+              conclusions={marketData.academic_conclusions}
+              onOpenReport={() => setIsReportOpen(true)}
+            />
           </div>
         )}
 
@@ -493,6 +514,13 @@ export default function Home() {
           </div>
         )}
       </main>
+
+      {/* Executive Print-Ready PDF Modal */}
+      <ExecutiveReportModal
+        isOpen={isReportOpen}
+        onClose={() => setIsReportOpen(false)}
+        data={marketData}
+      />
 
       {/* Footer & Academic Disclaimers */}
       <Footer meta={marketData.project_meta} />

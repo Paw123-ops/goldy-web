@@ -2,14 +2,16 @@
 
 import React from "react";
 import { AcademicConclusionItem } from "@/types/goldy";
-import { BookOpen, CheckCircle, ShieldCheck, TrendingUp, HelpCircle, Award } from "lucide-react";
+import { BookOpen, CheckCircle, ShieldCheck, TrendingUp, HelpCircle, Award, FileText, Printer } from "lucide-react";
 
 interface AcademicConclusionsSectionProps {
   conclusions: AcademicConclusionItem[];
+  onOpenReport?: () => void;
 }
 
 export const AcademicConclusionsSection: React.FC<AcademicConclusionsSectionProps> = ({
   conclusions,
+  onOpenReport,
 }) => {
   return (
     <section className="mb-10 rounded-3xl bg-slate-900/40 border border-slate-800/80 backdrop-blur-xl p-6 sm:p-7 shadow-2xl relative overflow-hidden">
@@ -93,6 +95,31 @@ export const AcademicConclusionsSection: React.FC<AcademicConclusionsSectionProp
           </div>
         </div>
       </div>
+
+      {/* Official Research Report CTA Button */}
+      {onOpenReport && (
+        <div className="mt-6 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-950/80 p-5 rounded-2xl border border-slate-800/80 shadow-inner">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0">
+              <FileText className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-white">Butuh Dokumen Fisik untuk Sidang / Bimbingan?</h4>
+              <p className="text-xs text-slate-400">
+                Unduh atau cetak laporan intelijen pasar & ringkasan validasi model dalam format resmi A4 (Print-Ready PDF).
+              </p>
+            </div>
+          </div>
+
+          <button
+            onClick={onOpenReport}
+            className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs transition shadow-lg shadow-amber-500/20 cursor-pointer flex items-center justify-center gap-2 active:scale-95 shrink-0"
+          >
+            <Printer className="w-4 h-4" />
+            <span>Cetak Dokumen Riset (PDF)</span>
+          </button>
+        </div>
+      )}
     </section>
   );
 };

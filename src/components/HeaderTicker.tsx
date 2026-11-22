@@ -2,14 +2,15 @@
 
 import React from "react";
 import { MarketSummary, ProjectMeta } from "@/types/goldy";
-import { TrendingUp, TrendingDown, ShieldCheck, Activity, Coins, Sparkles } from "lucide-react";
+import { TrendingUp, TrendingDown, ShieldCheck, Activity, Coins, Sparkles, FileText } from "lucide-react";
 
 interface HeaderTickerProps {
   meta: ProjectMeta;
   market: MarketSummary;
+  onOpenReport?: () => void;
 }
 
-export const HeaderTicker: React.FC<HeaderTickerProps> = ({ meta, market }) => {
+export const HeaderTicker: React.FC<HeaderTickerProps> = ({ meta, market, onOpenReport }) => {
   const isPositive = market.silver_change_pct >= 0;
 
   return (
@@ -51,6 +52,17 @@ export const HeaderTicker: React.FC<HeaderTickerProps> = ({ meta, market }) => {
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
             <span className="font-bold">Model Verified</span>
           </div>
+
+          {onOpenReport && (
+            <button
+              onClick={onOpenReport}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs transition shadow-md shadow-amber-500/20 cursor-pointer active:scale-95"
+              title="Unduh / Cetak Laporan Riset Resmi (PDF)"
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Laporan PDF</span>
+            </button>
+          )}
 
           <div className="hidden lg:block text-right pl-2 border-l border-slate-800">
             <span className="text-[11px] text-slate-500">Peneliti:</span>{" "}
