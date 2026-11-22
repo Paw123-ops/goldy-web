@@ -257,35 +257,6 @@ export const ExecutiveReportModal: React.FC<ExecutiveReportModalProps> = ({
               </div>
             </div>
           </div>
-
-          {/* Section 4: Academic Sign-off and Validation Box */}
-          <div className="pt-6 border-t-2 border-slate-900 space-y-6">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-8 text-xs font-sans">
-              <div className="space-y-1 max-w-sm">
-                <p className="font-bold text-slate-900">Pernyataan Orisinalitas & Verifikasi Sistem:</p>
-                <p className="text-[11px] text-slate-500 leading-relaxed">
-                  Laporan riset ini digenerasi secara otomatis oleh platform web <strong>Goldy</strong> yang terintegrasi dengan backend API Machine Learning Vercel Cloud Platform.
-                </p>
-              </div>
-
-              {/* Signature Blocks */}
-              <div className="flex items-center gap-12 font-sans">
-                <div className="text-center space-y-12">
-                  <span className="text-slate-500 text-[11px] block">Mengetahui,<br />Dosen Penguji / Pembimbing</span>
-                  <div className="border-t border-slate-400 pt-1 w-40 text-[11px] text-slate-700">
-                    ( .................................... )
-                  </div>
-                </div>
-
-                <div className="text-center space-y-12">
-                  <span className="text-slate-500 text-[11px] block">Bandung, 22 November 2026<br />Peneliti Mahasiswa</span>
-                  <div className="border-t border-slate-900 pt-1 w-44 font-bold text-slate-950 text-xs">
-                    {project_meta.author}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
